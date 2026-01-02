@@ -2,63 +2,124 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
 
-  <!-- Apex -> www redirect: if the site is opened at the apex domain, redirect to www -->
+  <title>Trade Grant — Empowering Small Businesses</title>
+  <meta name="description" content="Trade Grant helps small businesses find and apply for grants, providing tools, resources and expert guidance to secure funding.">
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://www.tradegrant.com">
+
+  <!-- Open Graph / Social Preview -->
+  <meta property="og:site_name" content="Trade Grant">
+  <meta property="og:title" content="Trade Grant — Empowering Small Businesses">
+  <meta property="og:description" content="Find and apply for grants tailored to your small business. Tools, resources, and guidance to help you secure funding.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.tradegrant.com">
+  <!-- Unsplash 1200x630 JPG for social previews -->
+  <meta property="og:image" content="https://source.unsplash.com/1200x630/?business">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@samirm031182">
+  <meta name="twitter:title" content="Trade Grant — Empowering Small Businesses">
+  <meta name="twitter:description" content="Find and apply for grants tailored to your small business. Tools, resources, and guidance to help you secure funding.">
+  <meta name="twitter:image" content="https://source.unsplash.com/1200x630/?business">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="assets/css/styles.css">
+
+  <!-- Client-side apex -> www redirect (preserve path/search/hash) -->
   <script>
-    (function() {
+    (function(){
       try {
-        var host = window.location.hostname;
-        if (host === 'tradegrant.com') {
+        var host = location.hostname;
+        // If user landed on apex domain (tradegrant.com) redirect to www
+        if (host === 'tradegrant.com' || host === 'tradegrant.com.') {
           var newHost = 'www.tradegrant.com';
-          var newUrl = window.location.protocol + '//' + newHost + window.location.pathname + window.location.search + window.location.hash;
+          var newUrl = location.protocol + '//' + newHost + location.pathname + location.search + location.hash;
           // Use replace so history isn't polluted
-          window.location.replace(newUrl);
+          location.replace(newUrl);
         }
       } catch (e) {
-        // fail silently
-        console && console.error && console.error(e);
+        // silent
+        console && console.warn && console.warn('redirect error', e);
       }
     })();
   </script>
 
-  <title>Trade Grant</title>
-  <meta name="description" content="Trade Grant — open-source grants and resources">
+  <!-- Global site tag (gtag.js) - Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-378787185"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);} 
+    gtag('js', new Date());
+    gtag('config', 'G-378787185');
+  </script>
 
-  <!-- Open Graph / Social -->
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="Trade Grant">
-  <meta property="og:description" content="Open-source grants and resources">
-  <meta property="og:image" content="https://www.tradegrant.com/assets/social/social-image.svg">
-  <meta property="og:url" content="https://www.tradegrant.com/">
-
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Trade Grant">
-  <meta name="twitter:description" content="Open-source grants and resources">
-  <meta name="twitter:image" content="https://www.tradegrant.com/assets/social/social-image.svg">
-
-  <link rel="canonical" href="https://www.tradegrant.com/">
-
-  <style>
-    body { font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; margin: 0; padding: 40px; background: #f8fafc; color: #0f172a; }
-    main { max-width: 800px; margin: 0 auto; }
-    header { margin-bottom: 24px; }
-    h1 { font-size: 36px; margin: 0 0 8px 0; }
-    p { margin: 0 0 12px 0; color: #334155; }
-  </style>
 </head>
 <body>
-  <main>
-    <header>
-      <h1>Trade Grant</h1>
-      <p>Open-source grants and resources</p>
-    </header>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="/">Trade Grant</a>
+      <nav class="main-nav">
+        <a href="/about">About</a>
+        <a href="/grants">Grants</a>
+        <a href="/resources">Resources</a>
+        <a href="/contact">Contact</a>
+      </nav>
+    </div>
+  </header>
 
-    <section>
-      <p>This is the homepage. The Open Graph image is set to the placeholder SVG at /assets/social/social-image.svg.</p>
-      <p>If you are on the apex domain (tradegrant.com) you will be redirected to the www subdomain.</p>
+  <main role="main" class="site-main">
+    <section class="hero">
+      <div class="wrap">
+        <h1>Find the right grants for your small business</h1>
+        <p>Trade Grant helps entrepreneurs discover funding opportunities, understand eligibility, and submit stronger applications.</p>
+        <p><a class="cta" href="/grants">Browse Grants</a></p>
+      </div>
+    </section>
+
+    <section class="features wrap">
+      <div class="feature">
+        <h2>Curated opportunities</h2>
+        <p>We search, filter, and surface grants relevant to your industry and location.</p>
+      </div>
+      <div class="feature">
+        <h2>Step-by-step guidance</h2>
+        <p>Access templates, checklists and expert tips to improve your chances of success.</p>
+      </div>
+      <div class="feature">
+        <h2>Application support</h2>
+        <p>Get help preparing budgets, narratives and documentation with our partner network.</p>
+      </div>
+    </section>
+
+    <section class="about wrap">
+      <h2>About Trade Grant</h2>
+      <p>We believe every small business deserves a fair shot at funding. Our mission is to lower the barriers to capital by providing discovery, guidance and ongoing support to business owners.</p>
     </section>
   </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>&copy; <span id="year"></span> Trade Grant — All rights reserved.</p>
+      <nav class="footer-nav">
+        <a href="/privacy">Privacy</a>
+        <a href="/terms">Terms</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script>
+    // dynamic year
+    try { document.getElementById('year').textContent = new Date().getFullYear(); } catch(e){}
+  </script>
+
+  <!-- Site JS -->
+  <script src="assets/js/main.js"></script>
 </body>
 </html>
